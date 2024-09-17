@@ -1,0 +1,30 @@
+<div class="page" style="background-color:darkgray; height: 100vh; width: 100vw; display: grid;
+    justify-content: center;align-items: center;">
+    <div class="container" style="height: 70vh; width: 35vw;">
+      <div class="">
+        <h2 class="" style="text-align: center;">Login</h2>
+        <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+          <div class="form-group">
+
+            <label for="email" >Email address</label>
+            <input type="email" id="email" class="form-control" required [(ngModel)]="email" name="email" #emailInput="ngModel" placeholder="Email ID">
+            <!-- <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="text-danger">
+              <div *ngIf="emailInput.errors?.['required']">Email is required.</div>
+              <div *ngIf="emailInput.errors?.['email']">Enter a valid email.</div>
+            </div> -->
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-control" required [(ngModel)]="password" name="password" #passwordInput="ngModel" placeholder="Password">
+            <!-- <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)" class="text-danger">
+              <div *ngIf="passwordInput.errors?.['required']">Password is required.</div>
+            </div> -->
+          </div>
+        
+          <div style="width: 100%; padding: 10px; display: grid; align-items: center; justify-content: center;"><button type="submit" class="btn btn-primary" style="width: 180px; ">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

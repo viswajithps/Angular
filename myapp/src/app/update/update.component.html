@@ -1,0 +1,109 @@
+<div class="container">
+<h2>Update Product</h2>
+<form (ngSubmit)="onSubmit()" >
+    <div class="form-group">
+     <label for="">ProductId</label>
+     <input type="text" 
+            class="form-control"
+            name="productId"
+            id="productId"
+            minlength="8"
+            required 
+            [(ngModel)]="product.productId"
+            #productid="ngModel">
+        <!-- <div *ngIf="productid.invalid&&productid.touched" class="alert">
+            <div *ngIf="productid.errors?.['required']">ProductId is Required</div>
+            <div *ngIf="productid.errors?.['minlength']">ProductId must be atleast 8 chars Long</div>
+        </div>     -->
+    </div>
+
+    <div class="form-group">
+        <label for="">Brand</label>
+        <input type="text" 
+               class="form-control"
+               name="brand"
+               id="name"
+               required
+               [(ngModel)]="product.brand"
+               #productbrand="ngModel">
+            <!-- <div *ngIf="productbrand.invalid&&productbrand.touched" class="alert">
+                <div *ngIf="productbrand.errors?.['required']">Product Brand is Required</div>
+            </div>    -->
+       </div>
+
+       <div class="form-group">
+        <label for="">Description</label>
+        <input type="text" 
+               class="form-control" 
+               name="description"
+               id="name"
+               [(ngModel)]="product.description">
+       </div>
+
+       <div class="form-group">
+        <label for="">Quantity</label>
+        <input type="number" 
+               class="form-control" 
+               name="quantity" 
+               id="name"
+               min="1"
+               required
+               [(ngModel)]="product.qty"
+              #productqty="ngModel">
+           <!-- <div *ngIf="productqty.invalid&&productqty.touched" class="alert">
+            <div *ngIf="productqty.errors?.['required']">Product Quantity is Required</div>
+            <div *ngIf="productqty.errors?.['min']">Minimum Quantity is Not Satisfied</div>
+           </div>    -->
+       </div>
+
+       <div class="form-group">
+        <label for="">Price</label>
+        <input type="text" 
+               class="form-control"
+               name="price"
+               id="name" 
+               required
+               [(ngModel)]="product.price"
+               #productprice="ngModel">
+               <!-- <div *ngIf="productprice.errors&&productprice.touched" class="alert">
+                <div *ngIf="productprice.errors?.['required']">Price is Required</div>
+               </div> -->
+       </div>
+
+       <div>
+        <button type="submit" class="btn btn-primary" >Submit</button>
+       </div>
+</form>
+
+
+ 
+  <div *ngIf="pro" >
+  <table class="table table-striped"  >
+      
+      <thead>
+        <tr>
+          <th>Product ID</th>
+          <th>Brand</th>
+          <th>Description</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr  >
+          <td>{{ pro.productId }}</td>
+          <td>{{ pro.brand }}</td>
+          <td>{{ pro.description }}</td>
+          <td>{{ pro.qty }}</td>
+          <td>{{ pro.price | currency:'INR' }}</td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+
+</div>
+
+<div>
+    <app-delete></app-delete>
+</div>

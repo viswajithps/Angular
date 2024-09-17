@@ -1,0 +1,33 @@
+<div class="container">
+    <h1>Product List</h1>
+  <div>
+    <button (click)="onSubmit()" class="btn btn-primary">Get Data</button>
+</div>
+  
+    <table class="table table-striped" *ngIf="ap.length > 0">
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let api of ap" >
+          <td>{{ api.userId}}</td>
+          <td>{{ api.id}}</td>
+          <td>{{ api.title }}</td>
+          <td>{{ api.body }}</td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+
+    
+  
+    <!-- <div *ngIf="products.length === 0" class="alert alert-info">
+      No products available.
+    </div> -->
+  </div>

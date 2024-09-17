@@ -1,0 +1,35 @@
+<div class="page" style="background-color:darkgray; height: 100vh; width: 100vw; display: grid;
+    justify-content: center;align-items: center;">
+    <div class="container" style="height: 70vh; width: 35vw;">
+      <div class="col-md-6">
+        <h2 class="text-center">Reset Password</h2>
+        <form (ngSubmit)="onSubmit()" #resetPasswordForm="ngForm">
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" class="form-control" required [(ngModel)]="email" name="email" #emailInput="ngModel">
+            <!-- <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="text-danger">
+              <div *ngIf="emailInput.errors?.['required']">Email is required.</div>
+              <div *ngIf="emailInput.errors?.['email']">Enter a valid email.</div>
+            </div> -->
+          </div>
+          <div class="form-group">
+            <label for="password">New Password</label>
+            <input type="password" id="password" class="form-control" required [(ngModel)]="password" name="password" #passwordInput="ngModel">
+            <!-- <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)" class="text-danger">
+              <div *ngIf="passwordInput.errors?.['required']">Password is required.</div>
+            </div> -->
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" class="form-control" required [(ngModel)]="confirmPassword" name="confirmPassword" #confirmPasswordInput="ngModel">
+            <!-- <div *ngIf="confirmPasswordInput.invalid && (confirmPasswordInput.dirty || confirmPasswordInput.touched)" class="text-danger">
+              <div *ngIf="confirmPasswordInput.errors?.['required']">Please confirm your password.</div>
+              <div *ngIf="password !== confirmPassword" class="text-danger">Passwords do not match.</div>
+            </div> -->
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="resetPasswordForm.invalid || password !== confirmPassword">Reset Password</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

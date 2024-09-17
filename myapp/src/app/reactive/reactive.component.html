@@ -1,0 +1,23 @@
+<p>Reactive Form</p> <br>
+
+<div class="container">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()" >
+        <label for="">Product ID:</label>
+        <input type="text" formControlName="productid" required><br>
+
+        <label for="">Brand:</label>
+        <input type="text" formControlName="brand"><br>
+
+        <label for="">Description:</label>
+        <input type="text" formControlName="description"><br>
+
+        <label for="">Quantity:</label>
+        <input type="text" formControlName="qty"><br>
+
+        <label for="">Price:</label>
+        <input type="text" formControlName="price"><br>
+
+        <button type="submit" [disabled]="!productForm.valid">Submit</button>
+    </form>
+
+</div>

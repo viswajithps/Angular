@@ -1,0 +1,66 @@
+<div class="container">
+    <h1>Product List</h1>
+  <div>
+    <button (click)="onSubmit()" class="btn btn-primary">Find All Product</button>
+    <button (click)="onGet()" class="btn btn-primary ">Find By Id</button>
+    <input  name="id" id="" [(ngModel)]="id" >
+</div>
+  
+    <table class="table table-striped" *ngIf="products.length > 0">
+      <thead>
+        <tr>
+          <th>Product ID</th>
+          <th>Brand</th>
+          <th>Description</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products" >
+          <td>{{ product.productId }}</td>
+          <td>{{ product.brand | uppercase}}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.qty }}</td>
+          <td>{{ product.price | currency:'INR' }}</td>
+        </tr>
+        
+      </tbody>
+    </table>
+   
+    <div *ngIf="pro">
+    <h3>Details of Product with Id {{id}}</h3>
+    <table class="table table-striped"  >
+        
+        <thead>
+          <tr>
+            <th>Product ID</th>
+            <th>Brand</th>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="pro" >
+            <td>{{ pro.productId }}</td>
+            <td>{{ pro.brand }}</td>
+            <td>{{ pro.description }}</td>
+            <td>{{ pro.qty }}</td>
+            <td>{{ pro.price | currency:'INR' }}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+
+    </div>
+  
+    <!-- <div *ngIf="products.length === 0" class="alert alert-info">
+      No products available.
+    </div> -->
+  </div>
+
+  <div>
+    <app-update></app-update>
+  </div>
+  

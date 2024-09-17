@@ -1,0 +1,12 @@
+.container{
+ width: 45vw;
+ border: 2px solid black;
+ 
+}
+
+.alert{
+    background-color: #fed3d3;
+    color: #820000;
+    padding: 1rem;
+    margin: 1rem;
+}

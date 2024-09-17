@@ -1,0 +1,9 @@
+<div>
+ <div *ngFor="let it of item">
+  {{it}}
+ </div>
+
+ <app-child (childEvent)="childData($event)"></app-child>
+
+ 
+</div>

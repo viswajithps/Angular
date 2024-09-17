@@ -1,0 +1,69 @@
+<!-- <div class="parent">
+<div style="border: solid 2px blue;" class="container">
+
+  <h2>Product Data</h2>
+  <p>Product Id:{{productid}}</p>
+  <p>Description:{{Description}}</p>
+  <p>Instock:{{available}}</p>
+  <p>Qty:{{qty}}</p>
+  <p>Enter order quantity: <input type="text" name="orderqty" id="" [(ngModel)]="orderqty" #inputqty>{{orderqty}}</p>
+
+
+  <div [ngSwitch]="inputqty.value">
+    <span *ngSwitchCase="201">..Qty Not Available</span>   
+    <span *ngSwitchCase="200">.. Exact Qty Available</span>  
+    <span *ngSwitchCase="199">..Full Qty Available</span>
+    <span *ngSwitchDefault>..Check Your Input</span>                     
+  </div>
+
+
+  <p>Delivery: <span [style.background-color]="deliverColor" >&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+      <div [innerHTML]="isorderedQtyAvailable"></div>
+ 
+    <p><button names="placeOrder" (click)="printOrder(inputqty.value)">PlaceOrder</button></p>
+
+    <div  *ngIf="qty>orderqty  ;else myTemplate ">
+      Ordered Quantity Available
+    </div>
+    
+    
+    
+    
+   
+   
+   
+    <ng-template #myTemplate ; qty:result >Orderd Quantity Not Available </ng-template>
+      {{orderDate|date:"dd/MM/yyyy"}}
+    <div *ngFor="let product of products; index as i; even as isEven; odd as isOdd">
+      <span *ngIf="isEven" [style.background-color]="evenColor" >
+        {{i}}
+      {{product.productid}}
+      {{product.Description}}
+      {{product.price|currency:'INR'}}
+    </span>
+   <span *ngIf="isOdd" [style.background-color]="oddColor">
+    {{i}}
+    {{product.productid}}
+    {{product.Description}}
+    {{product.price}}
+
+   </span>
+    </div>
+
+</div>
+
+<div style="border: solid 2px green" class="color">
+
+  <app-color></app-color>
+  
+
+</div>
+
+<div style="border: solid 2px black">
+  <app-data></app-data>
+</div>
+
+</div> -->
+<h1>Parent Component</h1>
+
+<app-color [title]="title"></app-color>
